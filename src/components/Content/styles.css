@@ -1,6 +1,6 @@
 .content {
+  text-align: left;
   background-color: red;
-  height: 100vh;
+  padding: 10vh 10vw 10vh 10vw;
   width: 80vw;
-  right: 0;
 }
