@@ -1,0 +1,11 @@
+.list-item {
+  border: 1px solid black;
+}
+
+.active {
+  border: 1px solid yellow;
+}
+
+.list-item-header {
+  margin: 0;
+}
