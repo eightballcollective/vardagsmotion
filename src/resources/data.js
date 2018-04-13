@@ -1,5 +1,4 @@
 const data = [
-    [
         {
             "id": 0,
             "title": "Motion 2017/18:3901",
@@ -105,7 +104,5 @@ const data = [
             "summary": "Riksdagen ställer sig bakom det som anförs i motionen om värdet av det bostadspolitiska målet om långsiktigt väl fungerande bostadsmarknader där konsumenternas efterfrågan möter ett utbud av bostäder som svarar mot behoven och tillkännager detta för regeringen. Riksdagen ställer sig bakom det som anförs i motionen om att bostadspolitiken särskilt ska värna långsiktiga spelregler för att främja välfungerande bygg- och bostadsmarknader och tillkännager detta för regeringen. Riksdagen ställer sig bakom det som anförs i motionen om att göra en översyn av befintlig forskning om effekterna av bostadssubventioner och tillkännager detta för regeringen."
         },
     ]
-
-]
 
 export default data

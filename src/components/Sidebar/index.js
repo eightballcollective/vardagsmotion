@@ -7,7 +7,14 @@ class Sidebar extends React.Component {
     let data = this.props.data
     return data.map(item => {
       return (
-        <ListItem key={item.id} id={item.id} title={item.title} peek={item.peek} active={item.active ?  true : false}/>
+        <ListItem key={item.id}
+          id={item.id}
+          title={item.title}
+          peek={item.peek}
+          active={item.active ?  true : false}
+          date={item.date}
+          summary={item.summary}
+          href={item.href}/>
       )
     })
   }

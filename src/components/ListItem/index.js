@@ -8,12 +8,13 @@ class ListItem extends React.Component {
   }
 
   handleClick() {
-    console.log(this.props.id)
+    let {id, summary, href, date} = this.props
+    console.log(id, summary, href, date)
   }
 
   render () {
     console.log(this.props)
-    let {title, id, peek, active} = this.props
+    let {title, id, peek, active, summary, href, date} = this.props
     let activeClass = active ? ' active' : ''
     return (
       <div className={'list-item' + activeClass} onClick={this.handleClick}>
