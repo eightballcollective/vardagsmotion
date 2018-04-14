@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { Component } from 'react'
+import './App.css'
 import Footer from './components/Footer'
 import Main from './components/Main'
 
@@ -11,8 +11,8 @@ class App extends Component {
         <Main/>
         <Footer/>
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App

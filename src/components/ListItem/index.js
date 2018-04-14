@@ -7,7 +7,7 @@ class ListItem extends React.Component {
   }
 
   render () {
-    let {title, id, peek, active, summary, href, date, onClick} = this.props
+    let {title, peek, active, onClick} = this.props
     let activeClass = active ? ' active' : ''
     return (
       <div className={'list-item' + activeClass} onClick={onClick}>

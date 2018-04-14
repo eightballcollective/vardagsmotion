@@ -12,6 +12,6 @@ export const receiveContent = (payload) => {
 export const fetchData = () => {console.log('fetch')}
 
 export const updateContent = content => ({
-    type: types.RECEIVE_CONTENT,
-    payload: content
+  type: types.RECEIVE_CONTENT,
+  payload: content
 })
