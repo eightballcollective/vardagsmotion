@@ -1,6 +1,6 @@
 .sidebar {
-  width: 20vw;
+  width: 25vw;
   height: 90vh;
-  background-color: blue;
+  background-color: white;
   overflow: auto;
 }
