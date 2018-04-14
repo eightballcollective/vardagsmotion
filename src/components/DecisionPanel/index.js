@@ -3,6 +3,7 @@ import './styles.css'
 import Button from '../Button'
 import { connect } from 'react-redux'
 import { agree, disagree, refuse } from '../../actions/contentActions'
+import { getColorFromID } from '../../utils/utils'
 
 class DecisionPanel extends React.Component {
   constructor (props) {
@@ -10,13 +11,17 @@ class DecisionPanel extends React.Component {
   }
 
   render () {
-    let { agreeAction, disagreeAction, refuseAction, id, handleClick} = this.props
+    let { agreeAction, disagreeAction, refuseAction, id, handleClick, voted, votedFor} = this.props
+    const svToEn = {'Ja': 'yes', 'Nej': 'no', 'Avstå': 'pass'}
+    const color = getColorFromID({id: svToEn[votedFor]})
+    console.log(color)
     return (
-      <div className='decisionPanel'>
-        <Button title='Ja' className='yes' onClick={agreeAction} handleClick={handleClick}/>
-        <Button title='Nej' className='no' onClick={disagreeAction} handleClick={handleClick}/>
-        <Button title='Avstå' className='refuse' onClick={refuseAction} handleClick={handleClick}/>
-      </div>
+      voted ? (<div className='decisionPanel'><p className='vote' style={{color: color}}>Du röstade {votedFor}</p></div>) : (
+        <div className='decisionPanel'>
+          <Button title='Ja' className='yes' onClick={agreeAction} handleClick={handleClick}/>
+          <Button title='Nej' className='no' onClick={disagreeAction} handleClick={handleClick}/>
+          <Button title='Avstå' className='refuse' onClick={refuseAction} handleClick={handleClick}/>
+        </div>)
     )
   }
 }

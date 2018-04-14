@@ -10,7 +10,7 @@ class Button extends React.Component {
 
   handleClick () {
     this.props.onClick(this.props.title)
-    this.props.handleClick()
+    this.props.handleClick(this.props.title)
   }
 
   render () {
