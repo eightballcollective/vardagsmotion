@@ -1,8 +1,14 @@
 import * as types from './actionTypes'
 
-export const agree = () => {}
-export const disagree = () => {}
-export const refuse = () => {}
+export const agree = () => ({
+  type: types.AGREE
+})
+export const disagree = () => ({
+  type: types.DISAGREE
+})
+export const refuse = () => ({
+  type: types.REFUSE
+})
 export const receiveContent = (payload) => {
   return {
     type: types.RECEIVE_CONTENT,

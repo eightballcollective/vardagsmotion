@@ -10,13 +10,13 @@ import {
 function contentReducer(state = initialState.content, { type, payload }) {
   switch(type) {
   case AGREE: {
-    return state
+    return handleAgree(state)
   }
   case DISAGREE: {
-    return state
+    return handleDisagree(state)
   }
   case REFUSE: {
-    return state
+    return handleRefuse(state)
   }
   case RECEIVE_CONTENT: {
     console.log('RECEIVE_CONTENT in contentReducer')
@@ -30,6 +30,19 @@ function contentReducer(state = initialState.content, { type, payload }) {
   }
   }
 }
+
+const handleAgree = (state) => {
+  console.log(state)
+  return state
+}
+
+const handleDisagree = (state) => ({
+  ...state,
+})
+
+const handleRefuse = (state) => ({
+  ...state,
+})
 
 const handleReceiveContent = (state, content) => {
   return {
