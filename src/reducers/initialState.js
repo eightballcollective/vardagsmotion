@@ -109,7 +109,7 @@ export default {
   },
   content: {
     content: {
-      title: 'asd'
+      title: 'Välkommen'
     }
   }
 }

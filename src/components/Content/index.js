@@ -1,6 +1,6 @@
 import React from 'react'
 import './styles.css'
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
 
 
 class Content extends React.Component {
@@ -21,8 +21,15 @@ class Content extends React.Component {
   }
 }
 
-const mapStateToProps = state => ({
-  content: state.content.content,
-})
+function mapStateToProps(state, props) {
+  return {
+    content: state.content.content,
+  }
+}
 
-export default connect(mapStateToProps)(Content)
+function mapDispatchToProps(dispatch) {
+  return {
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Content)

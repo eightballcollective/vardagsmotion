@@ -1,6 +1,28 @@
 .content {
   text-align: left;
-  background-color: red;
+  background-color: #ffffff;
+  box-shadow: 0 0 5px #b0b0b0;
+  border-left: 1px solid #d1d1d1;
   padding: 10vh 10vw 10vh 10vw;
   width: 80vw;
+}
+
+.content a,
+.content p,
+.content h1,
+.content h5 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+}
+
+.content a {
+  font-weight: 700;
+}
+
+.content p {
+  font-size: 1em;
+}
+
+.content h1 {
+  font-size: 2.5em;
 }
