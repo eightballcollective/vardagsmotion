@@ -4,6 +4,7 @@ export default {
     decisions: []
   },
   content: {
+    isPopulated: false,
     content: {}
   }
 }

@@ -50,7 +50,8 @@ const handleFetchData = (state, payload) => {
 const handleUpdateContent = (state, content) => {
   return {
     ...state,
-    content
+    content,
+    isPopulated: true
   }
 }
 

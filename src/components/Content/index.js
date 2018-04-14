@@ -10,13 +10,14 @@ class Content extends React.Component {
 
   render () {
     let {title, date, summary, href} = this.props.content
+    console.log(this.props)
     return (
       <div className='content'>
         <h1>{title}</h1>
         <h5>{date}</h5>
         <p>{summary}</p>
         {href ? <a href={href} target='_blank'>Se hela motionen</a> : ''}
-        <DecisionPanel/>
+        {this.props.isPopulated ? <DecisionPanel/> : ''}
       </div>
     )
   }
@@ -24,6 +25,7 @@ class Content extends React.Component {
 
 const mapStateToProps = state => ({
   content: state.content.content,
+  isPopulated: state.content.isPopulated,
 })
 
 export default connect(mapStateToProps)(Content)
