@@ -16,7 +16,7 @@ class DecisionPanel extends React.Component {
     const color = getColorFromID({id: svToEn[votedFor]})
     console.log(color)
     return (
-      voted ? (<div className='decisionPanel'><p className='vote' style={{color: color}}>Du röstade <u>{votedFor}</u><br/>Så här röstade riksdagen:</p></div>) : (
+      voted ? (<div className='decisionPanel'><p className='vote' style={{color: color}}>Du röstade<br/><u className='du'>{votedFor.toUpperCase()}</u><br/><br/><span className='riksdagen'>Så här röstade riksdagen:</span></p></div>) : (
         <div className='decisionPanel'>
           <Button title='Ja' className='yes' onClick={agreeAction} handleClick={handleClick}/>
           <Button title='Nej' className='no' onClick={disagreeAction} handleClick={handleClick}/>
