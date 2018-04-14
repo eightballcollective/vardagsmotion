@@ -4,19 +4,13 @@ import './styles.css'
 class ListItem extends React.Component {
   constructor (props) {
     super(props)
-    this.handleClick = this.handleClick.bind(this)
-  }
-
-  handleClick() {
-    let onClick = this.props.onClick
-    onClick(this.props)
   }
 
   render () {
-    let {title, id, peek, active, summary, href, date} = this.props
+    let {title, id, peek, active, summary, href, date, onClick} = this.props
     let activeClass = active ? ' active' : ''
     return (
-      <div className={'list-item' + activeClass} onClick={this.handleClick}>
+      <div className={'list-item' + activeClass} onClick={onClick}>
         <h4 className='list-item-header'>{title}</h4>
         <p>{peek}</p>
       </div>
@@ -24,4 +18,4 @@ class ListItem extends React.Component {
   }
 }
 
-export default ListItem;
+export default ListItem

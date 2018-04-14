@@ -1,5 +1,12 @@
-import * as types from './actionTypes'
+import { UPDATE_CONTENT } from './actionTypes'
 
-export const updateContent = ({title, summary, date, href, id}) => {
-  console.log('title', title, 'id', id)
+export const updateContent = (payload) => {
+  if (payload.dispatch) payload.dispatch(update(payload))
+}
+
+const update = (payload) => {
+  return {
+    type: UPDATE_CONTENT,
+    payload: payload
+  }
 }

@@ -3,32 +3,35 @@ import {
   AGREE,
   DISAGREE,
   REFUSE,
-  RECEIVE_DATA
+  RECEIVE_CONTENT,
+  FETCH_DATA
 } from '../actions/actionTypes';
-import {
-  agree,
-  disagree,
-  refuse,
-  receiveData
-} from '../actions/contentActions'
 
 function contentReducer(state = initialState.content, { type, payload }) {
   switch(type) {
     case AGREE: {
-      return agree(payload)
+      return state
     }
     case DISAGREE: {
-      return disagree(payload)
+      return state
     }
     case REFUSE: {
-      return refuse(payload)
+      return state
     }
-    case RECEIVE_DATA: {
-      return receiveData(payload)
+    case RECEIVE_CONTENT: {
+      console.log('RECEIVE_CONTENT in contentReducer')
+      return handleReceiveContent(state, payload)
     }
     default: {
       return state
     }
+  }
+}
+
+const handleReceiveContent = (state, content) => {
+  return {
+    ...state,
+    content
   }
 }
 
