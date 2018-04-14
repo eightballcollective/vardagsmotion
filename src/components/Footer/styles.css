@@ -1,15 +1,22 @@
 .footer {
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   bottom: 0;
   left: 0;
-  height: 10vh;
+  height: 5vh;
   position: fixed;
   width: 100%;
   background-color: black;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
 }
 
 .footer-text {
   color: white;
+}
+
+.footer span {
+  color: #a77eff;
+  font-weight: bold;
 }
