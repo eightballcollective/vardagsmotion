@@ -9,7 +9,7 @@ button {
   border-radius: 8px;
   padding: 16px 32px;
   display: inline-block;
-  margin: 4px 2px;
+  margin: 0 0.5vw;
   -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;
   cursor: pointer;

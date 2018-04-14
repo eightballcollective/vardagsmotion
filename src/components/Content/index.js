@@ -13,11 +13,15 @@ class Content extends React.Component {
     console.log(this.props)
     return (
       <div className='content'>
-        <h1>{title}</h1>
-        <h5>{date}</h5>
-        <p>{summary}</p>
-        {href ? <a href={href} target='_blank'>Se hela motionen</a> : ''}
-        {this.props.isPopulated ? <DecisionPanel/> : ''}
+        <div>
+          <h1>{title}</h1>
+          <h5>{date}</h5>
+          <p>{summary}</p>
+          {href ? <a href={href} target='_blank'>Se hela motionen</a> : ''}
+        </div>
+        <div>
+          {this.props.isPopulated ? <DecisionPanel/> : ''}
+        </div>
       </div>
     )
   }
