@@ -4,12 +4,10 @@
   justify-content: space-between;
   text-align: left;
   background-color: #ffffff;
-  box-shadow: 0 0 5px #b0b0b0;
   border-left: 1px solid #d1d1d1;
-  padding: 10vh 10vw 10vh 10vw;
+  padding: 7vh 10vw 10vh 10vw;
   width: 70vw;
-  min-height: 80vh;
-  overflow: auto;
+  overflow-y: scroll;
 }
 
 .content a,
@@ -18,6 +16,7 @@
 .content h5 {
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
+  white-space: pre-line;
 }
 
 .content a {
@@ -31,4 +30,8 @@
 
 .content h1 {
   font-size: 2.5em;
+}
+
+.content h5 {
+  opacity: 0.75;
 }

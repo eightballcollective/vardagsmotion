@@ -66,10 +66,10 @@ module.exports.parseSummary = function(url) {
       for(let i = 0; i < nodes.length; i++) {
         let content = nodes[i].textContent.trim()
         if (content != '') {
-          res += nodes[i].textContent.trim() + '\n'
+          res += nodes[i].textContent.trim() + '\n\n'
         }
       }
       return res.trim()
     })
-    .catch(err => '')
+    .catch(err => undefined)
 }

@@ -1,4 +1,11 @@
 .decisionPanel {
+  margin: 10px 0 10px 0;
   display: flex;
   justify-content: center;
+}
+
+.vote {
+  margin-top: 30px;
+  font-weight: 600 !important;
+  text-align: center;
 }

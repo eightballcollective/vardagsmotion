@@ -32,16 +32,16 @@ class Content extends React.Component {
       this.props.isPopulated ? (<div className='content'>
         <div>
           <h1>{title}</h1>
-          <h5>{date}</h5>
-          <p>{summary}</p>
+          <h5>{date.substring(0, 10)}</h5>
+          <p>{ summary || 'Ingen sammanfattning tillgänglig' }</p>
+          <br/>
           {href ? <a href={href} target='_blank'>Se hela motionen</a> : ''}
         </div>
         <div>
           {this.props.isPopulated ? <DecisionPanel voted={this.state.voted} votedFor={this.state.votedFor} handleClick={this.handleClick}/> : ''}
+          <PiePanel size={130} votingData={this.props.votingData} voted={this.state.voted}/>
         </div>
-        <PiePanel size={130} votingData={this.props.votingData} voted={this.state.voted}/>
       </div>) : <Welcome/>
-
     )
   }
 }
