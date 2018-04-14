@@ -1,6 +1,15 @@
 .pies {
   text-align: center;
-  margin-top: 10vh;
+  margin-top: 3vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.pieBlock {
   display: flex;
   justify-content: space-around;
+}
+
+.partyName {
+  font-weight: 600 !important;
 }

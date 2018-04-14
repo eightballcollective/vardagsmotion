@@ -19,7 +19,7 @@ class Sidebar extends React.Component {
         <ListItem key={item.id}
           id={item.id}
           title={item.title}
-          peek={item.peek}
+          subtitle={item.subtitle}
           active={item.active}
           date={item.date}
           summary={item.summary}
@@ -47,7 +47,7 @@ const mapDispatchToProps = dispatch => ({
   onListItemClick: (payload) => {
     dispatch(updateContent(payload))
     dispatch(setActive(payload.id))
-    dispatch(fetchData(payload))
+    dispatch(fetchData(payload.id))
   },
   fetchDecisions: () => dispatch(fetchDecisions())
 })

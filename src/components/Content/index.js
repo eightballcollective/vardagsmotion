@@ -32,7 +32,7 @@ class Content extends React.Component {
         <div>
           {this.props.isPopulated ? <DecisionPanel/> : ''}
         </div>
-        <PiePanel votingData={data} answered={true}/>
+        <PiePanel size={130} votingData={this.props.votingData} answered={true}/>
       </div>) : <Welcome/>
 
     )
@@ -43,11 +43,12 @@ const mapStateToProps = state => ({
   content: state.content.content,
   summary: state.content.summary,
   isPopulated: state.content.isPopulated,
+  votingData: state.content.votingData.filter(data => data.parti !== '-')
 })
 
 const mapDispatchToProps = dispatch => ({
   fetchSummary: (id) => dispatch(fetchSummary(id)),
-  updateSummary: (href) => dispatch(updateSummary(href))
+  updateSummary: (href) => dispatch(updateSummary(href)),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Content)

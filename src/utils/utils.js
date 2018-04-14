@@ -1,12 +1,12 @@
 export const getColorFromID = ({ id }) => {
   switch (id) {
-  case 'Ja':
+  case 'yes':
     return '#58df75'
-  case 'Nej':
+  case 'no':
     return '#fc6271'
-  case 'Avstår':
+  case 'pass':
     return '#bdbdbd'
-  case 'Frånvarande':
+  case 'absent':
     return '#575859'
   }
 }

@@ -6,7 +6,8 @@ import {
   UPDATE_CONTENT,
   FETCH_DATA,
   FETCH_SUMMARY,
-  UPDATE_SUMMARY
+  UPDATE_SUMMARY,
+  UPDATE_VOTING_DATA
 } from '../actions/actionTypes'
 import { updateSummary } from '../actions/contentActions'
 import store from '../store'
@@ -23,11 +24,14 @@ function contentReducer(state = initialState.content, { type, payload }) {
   case REFUSE: {
     return handleAnswer(state, payload)
   }
+  case UPDATE_VOTING_DATA: {
+    return handleUpdateVotingData(state, payload)
+  }
   case UPDATE_CONTENT: {
     return handleUpdateContent(state, payload)
   }
   case FETCH_DATA: {
-    return handleFetchData(state, payload)
+    handleFetchData(state, payload.id)
   }
   case FETCH_SUMMARY: {
     return handleFetchSummary(state, payload)
@@ -57,7 +61,17 @@ const handleAnswer = (state, payload) => {
   }
 }
 
-const handleFetchData = (state, payload) => {
+const handleUpdateVotingData = (state, payload) => ({
+  ...state,
+  votingData: payload
+})
+
+const handleFetchData = (state, id) => {
+  api.getPartyVotes(id)
+    .then(res => store.dispatch({
+      type: UPDATE_VOTING_DATA,
+      payload: res
+    }))
   return state
 }
 

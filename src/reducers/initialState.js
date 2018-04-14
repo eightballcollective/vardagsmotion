@@ -7,6 +7,8 @@ export default {
     isPopulated: false,
     content: {},
     summary: '',
-    answers: []
+    answers: [],
+    votingData: []
   },
+
 }

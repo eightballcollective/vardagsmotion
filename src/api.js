@@ -24,8 +24,18 @@ function ftch(...args) {
 }
 
 // Returns a Promise with the data of /motions
-module.exports.getMotions = function() {
+module.exports.getDecisions = function() {
   const url = `${BASE_URL}/decisions`
+  return ftch(
+    url, {
+      method: 'GET',
+      headers: { ...jsonHeader }
+    }
+  )
+}
+
+module.exports.getPartyVotes = function(id) {
+  const url = `${BASE_URL}/partyVotes?id=${id}`
   return ftch(
     url, {
       method: 'GET',
