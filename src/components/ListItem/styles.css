@@ -3,13 +3,12 @@
   border-bottom: 1px solid #d1d1d1;
   text-align: left;
   padding: 1.5vw;
-  width: 100%;
 }
 
 .list-item-header, p {
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
-  font-size: 1.3em;
+  font-size: 1.1em;
   padding: 0;
   margin: 0;
 }

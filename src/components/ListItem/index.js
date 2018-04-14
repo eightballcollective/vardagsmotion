@@ -7,12 +7,12 @@ class ListItem extends React.Component {
   }
 
   render () {
-    let {title, peek, active, onClick} = this.props
+    let {title, subtitle, active, onClick} = this.props
     let activeClass = active ? ' active' : ''
     return (
       <div className={'list-item' + activeClass} onClick={onClick}>
         <h4 className='list-item-header'>{title}</h4>
-        <p>{peek}</p>
+        <p>{subtitle}</p>
       </div>
     )
   }

@@ -10,7 +10,7 @@ class Content extends React.Component {
   }
 
   render () {
-    let {title, date, summary, href} = this.props.content
+    let {title, subtitle, date, summary, href} = this.props.content
     console.log(this.props)
     return (
       this.props.isPopulated ? (<div className='content'>

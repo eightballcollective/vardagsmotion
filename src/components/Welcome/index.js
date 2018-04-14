@@ -8,7 +8,7 @@ class Welcome extends React.Component {
 
   render () {
     return (
-      <div className='welcome'>
+      <div className='content'>
         <h1>Välkommen</h1>
         <p>Beskrivning av hur allt fungerar...</p>
       </div>
