@@ -1,11 +1,18 @@
 import React from 'react'
 import './styles.css'
 import ListItem from '../ListItem'
+import { connect } from 'react-redux';
+import { updateContent } from '../../actions/sidebarActions';
 
 class Sidebar extends React.Component {
+  constructor (props) {
+    super(props)
+    this.createListItems = this.createListItems.bind(this)
+  }
+
   createListItems () {
-    let data = this.props.data
-    return data.map(item => {
+    let decisions = this.props.decisions
+    return decisions.map(item => {
       return (
         <ListItem key={item.id}
           id={item.id}
@@ -14,7 +21,8 @@ class Sidebar extends React.Component {
           active={item.active ?  true : false}
           date={item.date}
           summary={item.summary}
-          href={item.href}/>
+          href={item.href}
+          onClick={updateContent}/>
       )
     })
   }
@@ -28,4 +36,16 @@ class Sidebar extends React.Component {
   }
 }
 
-export default Sidebar
+function mapStateToProps(state, props) {
+  return {
+    decisions: state.sidebar.decisions,
+  }
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    updateContent() { dispatch(updateContent()) },
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Sidebar)

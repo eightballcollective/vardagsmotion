@@ -8,12 +8,11 @@ class ListItem extends React.Component {
   }
 
   handleClick() {
-    let {id, summary, href, date} = this.props
-    console.log(id, summary, href, date)
+    let onClick = this.props.onClick
+    onClick(this.props)
   }
 
   render () {
-    console.log(this.props)
     let {title, id, peek, active, summary, href, date} = this.props
     let activeClass = active ? ' active' : ''
     return (

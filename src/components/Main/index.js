@@ -8,7 +8,7 @@ function Main () {
   return (
     <div className='main'>
       <Sidebar data={data}/>
-      <Content title='Motion 123' date='2017' summary='En sammanfattning' href='#'/>
+      <Content/>
     </div>
   )
 }
