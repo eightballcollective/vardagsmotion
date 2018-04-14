@@ -5,7 +5,7 @@ function Footer() {
   return (
     <div className='footer'>
       <p className='footer-text'>
-        Made with &hearts; by Eightball collective
+        Made with ⚖️ by <span>Eightball collective</span>
       </p>
     </div>
   )
