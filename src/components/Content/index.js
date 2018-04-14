@@ -1,6 +1,6 @@
 import React from 'react'
 import './styles.css'
-import { connect } from 'react-redux';
+import { connect } from 'react-redux'
 
 
 class Content extends React.Component {

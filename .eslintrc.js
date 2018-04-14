@@ -3,7 +3,7 @@ module.exports = {
     "browser": true,
     "es6": true
   },
-  "extends": "eslint:recommended",
+  "extends": "plugin:react/recommended",
   "parserOptions": {
     "ecmaFeatures": {
       "experimentalObjectRestSpread": true,
@@ -32,6 +32,6 @@ module.exports = {
       "error",
       "never"
     ],
-    "react/jsx-uses-vars": 1
+    "react/prop-types": 0
   }
 };
