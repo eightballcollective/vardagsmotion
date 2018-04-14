@@ -2,6 +2,7 @@ import React from 'react'
 import './styles.css'
 import { connect } from 'react-redux'
 import DecisionPanel from '../DecisionPanel'
+import Welcome from '../Welcome'
 
 class Content extends React.Component {
   constructor (props) {
@@ -17,7 +18,7 @@ class Content extends React.Component {
         <h5>{date}</h5>
         <p>{summary}</p>
         {href ? <a href={href} target='_blank'>Se hela motionen</a> : ''}
-        {this.props.isPopulated ? <DecisionPanel/> : ''}
+        {this.props.isPopulated ? <DecisionPanel/> : <Welcome/>}
       </div>
     )
   }
