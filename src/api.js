@@ -33,3 +33,33 @@ module.exports.getMotions = function() {
     }
   )
 }
+
+// Takes an url like http://data.riksdagen.se/dokument/H201AU11
+// ann returns the summary
+module.exports.parseSummary = function(url) {
+  return fetch(url)
+    .then(res => res.text())
+    .then(text => {
+      const parser = new DOMParser()
+      const html = parser.parseFromString(text, 'text/html')
+      const start =  html.querySelector('.Sammanfattning')
+      const end =  html.querySelector('.Innehllsfrteckning')
+      const nodes = []
+      // Collect all nodes between Sammanfattning and Innehllsfrteckning
+      let currentNode = start.nextSibling
+      while(currentNode != end) {
+        nodes.push(currentNode)
+        currentNode = currentNode.nextSibling
+      }
+      // Build string
+      let res = ''
+      for(let i = 0; i < nodes.length; i++) {
+        let content = nodes[i].textContent.trim()
+        if (content != '') {
+          res += nodes[i].textContent.trim() + '\n'
+        }
+      }
+      return res.trim()
+    })
+    .catch(err => '')
+}
