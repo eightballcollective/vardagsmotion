@@ -1,6 +1,7 @@
 import React from 'react'
 import './styles.css'
 import { connect } from 'react-redux'
+import DecisionPanel from '../DecisionPanel'
 
 class Content extends React.Component {
   constructor (props) {
@@ -15,6 +16,7 @@ class Content extends React.Component {
         <h5>{date}</h5>
         <p>{summary}</p>
         {href ? <a href={href} target='_blank'>Se hela motionen</a> : ''}
+        <DecisionPanel/>
       </div>
     )
   }
