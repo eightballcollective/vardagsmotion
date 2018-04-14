@@ -3,7 +3,7 @@ import {
   AGREE,
   DISAGREE,
   REFUSE,
-  RECEIVE_CONTENT,
+  UPDATE_CONTENT,
   FETCH_DATA
 } from '../actions/actionTypes'
 
@@ -18,12 +18,11 @@ function contentReducer(state = initialState.content, { type, payload }) {
   case REFUSE: {
     return state
   }
-  case RECEIVE_CONTENT: {
-    console.log('RECEIVE_CONTENT in contentReducer')
-    return handleReceiveContent(state, payload)
+  case UPDATE_CONTENT: {
+    return handleUpdateContent(state, payload)
   }
   case FETCH_DATA: {
-    return state
+    return handleFetchData(state, payload)
   }
   default: {
     return state
@@ -31,7 +30,11 @@ function contentReducer(state = initialState.content, { type, payload }) {
   }
 }
 
-const handleReceiveContent = (state, content) => {
+const handleFetchData = (state, payload) => {
+  return state
+}
+
+const handleUpdateContent = (state, content) => {
   return {
     ...state,
     content

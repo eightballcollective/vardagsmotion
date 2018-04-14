@@ -1,12 +1,11 @@
-import { UPDATE_CONTENT } from './actionTypes'
+import * as types from './actionTypes'
 
-export const updateContent = (payload) => {
-  if (payload.dispatch) payload.dispatch(update(payload))
-}
+export const setActive = (id) => ({
+  type: types.SET_ACTIVE,
+  payload: {id: id}
+})
 
-const update = (payload) => {
-  return {
-    type: UPDATE_CONTENT,
-    payload: payload
-  }
-}
+export const fetchDecisions = (payload) => ({
+  type: types.FETCH_DECISIONS,
+  payload: payload
+})

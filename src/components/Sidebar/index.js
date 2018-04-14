@@ -2,7 +2,9 @@ import React from 'react'
 import './styles.css'
 import ListItem from '../ListItem'
 import { connect } from 'react-redux'
-import { updateContent } from '../../actions/contentActions'
+import { updateContent, fetchData } from '../../actions/contentActions'
+import { setActive, fetchDecisions } from '../../actions/sidebarActions'
+import api from '../../api'
 
 class Sidebar extends React.Component {
   constructor (props) {
@@ -18,7 +20,7 @@ class Sidebar extends React.Component {
           id={item.id}
           title={item.title}
           peek={item.peek}
-          active={item.active ?  true : false}
+          active={item.active}
           date={item.date}
           summary={item.summary}
           href={item.href}
@@ -37,11 +39,17 @@ class Sidebar extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  decisions: state.sidebar.decisions
+  decisions: state.sidebar.decisions,
+  isPopulated: state.sidebar.isPopulated
 })
 
 const mapDispatchToProps = dispatch => ({
-  onListItemClick: (payload) => dispatch(updateContent(payload))
+  onListItemClick: (payload) => {
+    dispatch(updateContent(payload))
+    dispatch(setActive(payload.id))
+    dispatch(fetchData(payload))
+  },
+  fetchDecisions: () => dispatch(fetchDecisions())
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Sidebar)
