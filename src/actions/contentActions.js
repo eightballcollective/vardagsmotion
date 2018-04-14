@@ -21,7 +21,7 @@ export const updateContent = (payload) => {
 
 export const fetchData = (id) => ({
   type: types.FETCH_DATA,
-  payload: id
+  payload: {id: id}
 })
 
 export const fetchSummary = (payload) => ({

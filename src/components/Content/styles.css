@@ -9,6 +9,7 @@
   padding: 10vh 10vw 10vh 10vw;
   width: 70vw;
   min-height: 80vh;
+  overflow: auto;
 }
 
 .content a,

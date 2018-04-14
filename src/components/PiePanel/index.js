@@ -15,10 +15,10 @@ import C from'../../logos/centerpartiet.png'
 class PiePanel extends React.Component {
   convertVoting (party) {
     return [
-      {id: 'yes', value: party.yes},
-      {id: 'no', value: party.no},
-      {id: 'pass', value: party.pass},
-      {id: 'absent', value: party.absent}
+      {id: 'yes', label: 'Ja', value: party.yes},
+      {id: 'no', label: 'Nej', value: party.no},
+      {id: 'pass', label: 'Avstår', value: party.pass},
+      {id: 'absent', label: 'Frånvarande', value: party.absent}
     ].sort((a, b) => b.value - a.value)
   }
 
@@ -65,9 +65,9 @@ class PiePanel extends React.Component {
   }
 
   render () {
-    const { votingData, answered } = this.props
+    const { votingData, voted } = this.props
     let pieContent = <div></div>
-    if (answered) {
+    if (voted) {
       pieContent = (
         <div className='pies'>
           <div className='pieBlock'>

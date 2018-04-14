@@ -10,12 +10,12 @@ class DecisionPanel extends React.Component {
   }
 
   render () {
-    let { agreeAction, disagreeAction, refuseAction, id } = this.props
+    let { agreeAction, disagreeAction, refuseAction, id, handleClick} = this.props
     return (
       <div className='decisionPanel'>
-        <Button title='Ja' className='yes' onClick={() => agreeAction('Ja')}/>
-        <Button title='Nej' className='no' onClick={() => disagreeAction('Nej')}/>
-        <Button title='Avstå' className='refuse' onClick={() => refuseAction('Avstår')}/>
+        <Button title='Ja' className='yes' onClick={agreeAction} handleClick={handleClick}/>
+        <Button title='Nej' className='no' onClick={disagreeAction} handleClick={handleClick}/>
+        <Button title='Avstå' className='refuse' onClick={refuseAction} handleClick={handleClick}/>
       </div>
     )
   }

@@ -10,10 +10,17 @@ import PiePanel from '../PiePanel'
 class Content extends React.Component {
   constructor (props) {
     super(props)
+    this.handleClick = this.handleClick.bind(this)
+    this.state = {voted: false}
+  }
+
+  handleClick () {
+    this.setState({voted: true})
   }
 
   componentDidUpdate(prevProps) {
     if (prevProps.content.id === this.props.content.id) { return }
+    this.setState({voted: false})
     this.props.updateSummary('')
     this.props.fetchSummary(this.props.content.href)
   }
@@ -30,9 +37,9 @@ class Content extends React.Component {
           {href ? <a href={href} target='_blank'>Se hela motionen</a> : ''}
         </div>
         <div>
-          {this.props.isPopulated ? <DecisionPanel/> : ''}
+          {this.props.isPopulated ? <DecisionPanel handleClick={this.handleClick}/> : ''}
         </div>
-        <PiePanel size={130} votingData={this.props.votingData} answered={true}/>
+        <PiePanel size={130} votingData={this.props.votingData} voted={this.state.voted}/>
       </div>) : <Welcome/>
 
     )

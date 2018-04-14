@@ -67,11 +67,15 @@ const handleUpdateVotingData = (state, payload) => ({
 })
 
 const handleFetchData = (state, id) => {
+  console.log(id)
   api.getPartyVotes(id)
-    .then(res => store.dispatch({
-      type: UPDATE_VOTING_DATA,
-      payload: res
-    }))
+    .then(res => {
+      console.log(res)
+      store.dispatch({
+        type: UPDATE_VOTING_DATA,
+        payload: res
+      })
+    })
   return state
 }
 
