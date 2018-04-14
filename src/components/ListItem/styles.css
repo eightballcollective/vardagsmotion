@@ -1,11 +1,33 @@
 .list-item {
-  border: 1px solid black;
+  background-color: #ffffff;
+  border-bottom: 1px solid #d1d1d1;
+  text-align: left;
+  padding: 1.5vw;
+  width: 100%;
+}
+
+.list-item-header, p {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-size: 1.3em;
+  padding: 0;
+  margin: 0;
+}
+
+p {
+  font-weight: 300;
+  font-size: 0.9em;
+  color: #777777
 }
 
 .active {
-  border: 1px solid yellow;
+  background-color: #3b92ff;
 }
 
-.list-item-header {
-  margin: 0;
+.active .list-item-header {
+  color: #ffffff;
+}
+
+.active p {
+  color: #b4d5ff;
 }
