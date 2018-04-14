@@ -23,3 +23,13 @@ export const fetchData = (payload) => ({
   type: types.FETCH_DATA,
   payload: payload
 })
+
+export const fetchSummary = (payload) => ({
+  type: types.FETCH_SUMMARY,
+  payload: payload
+})
+
+export const updateSummary = (payload) => ({
+  type: types.UPDATE_SUMMARY,
+  payload: payload
+})

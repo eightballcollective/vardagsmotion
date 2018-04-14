@@ -4,8 +4,13 @@ import {
   DISAGREE,
   REFUSE,
   UPDATE_CONTENT,
-  FETCH_DATA
+  FETCH_DATA,
+  FETCH_SUMMARY,
+  UPDATE_SUMMARY
 } from '../actions/actionTypes'
+import { updateSummary } from '../actions/contentActions'
+import store from '../store'
+import api from '../api'
 
 function contentReducer(state = initialState.content, { type, payload }) {
   switch(type) {
@@ -23,6 +28,12 @@ function contentReducer(state = initialState.content, { type, payload }) {
   }
   case FETCH_DATA: {
     return handleFetchData(state, payload)
+  }
+  case FETCH_SUMMARY: {
+    return handleFetchSummary(state, payload)
+  }
+  case UPDATE_SUMMARY: {
+    return handleUpdateSummary(state, payload)
   }
   default: {
     return state
@@ -49,6 +60,18 @@ const handleAnswer = (state, payload) => {
 const handleFetchData = (state, payload) => {
   return state
 }
+
+const handleFetchSummary = (state, payload) => {
+  api.parseSummary(payload).then(data => {
+    store.dispatch(updateSummary(data))
+  })
+  return state
+}
+
+const handleUpdateSummary = (state, payload) => ({
+  ...state,
+  summary: payload
+})
 
 const handleUpdateContent = (state, content) => {
   return {

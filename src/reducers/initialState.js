@@ -6,6 +6,7 @@ export default {
   content: {
     isPopulated: false,
     content: {},
+    summary: '',
     answers: []
   },
 }

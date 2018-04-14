@@ -3,15 +3,23 @@ import './styles.css'
 import { connect } from 'react-redux'
 import DecisionPanel from '../DecisionPanel'
 import Welcome from '../Welcome'
+import { fetchSummary, updateSummary } from '../../actions/contentActions'
+import api from '../../api'
 
 class Content extends React.Component {
   constructor (props) {
     super(props)
   }
 
+  componentDidUpdate(prevProps) {
+    if (prevProps.content.id === this.props.content.id) { return }
+    this.props.updateSummary('')
+    this.props.fetchSummary(this.props.content.href)
+  }
+
   render () {
-    let {title, subtitle, date, summary, href} = this.props.content
-    console.log(this.props)
+    let {title, subtitle, date, href} = this.props.content
+    let summary = this.props.summary
     return (
       this.props.isPopulated ? (<div className='content'>
         <div>
@@ -30,7 +38,13 @@ class Content extends React.Component {
 
 const mapStateToProps = state => ({
   content: state.content.content,
+  summary: state.content.summary,
   isPopulated: state.content.isPopulated,
 })
 
-export default connect(mapStateToProps)(Content)
+const mapDispatchToProps = dispatch => ({
+  fetchSummary: (id) => dispatch(fetchSummary(id)),
+  updateSummary: (href) => dispatch(updateSummary(href))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Content)
