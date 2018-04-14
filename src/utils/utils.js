@@ -1,5 +1,4 @@
 export const getColorFromID = ({ id }) => {
-  console.log(id)
   switch (id) {
   case 'Ja':
     return '#58df75'

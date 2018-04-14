@@ -5,6 +5,7 @@ import DecisionPanel from '../DecisionPanel'
 import Welcome from '../Welcome'
 import { fetchSummary, updateSummary } from '../../actions/contentActions'
 import api from '../../api'
+import PiePanel from '../PiePanel'
 
 class Content extends React.Component {
   constructor (props) {
@@ -31,7 +32,9 @@ class Content extends React.Component {
         <div>
           {this.props.isPopulated ? <DecisionPanel/> : ''}
         </div>
+        <PiePanel votingData={data} answered={true}/>
       </div>) : <Welcome/>
+
     )
   }
 }
