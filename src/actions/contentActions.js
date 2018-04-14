@@ -1,13 +1,16 @@
 import * as types from './actionTypes'
 
-export const agree = () => ({
-  type: types.AGREE
+export const agree = (payload) => ({
+  type: types.AGREE,
+  payload: payload
 })
-export const disagree = () => ({
-  type: types.DISAGREE
+export const disagree = (payload) => ({
+  type: types.DISAGREE,
+  payload: payload
 })
-export const refuse = () => ({
-  type: types.REFUSE
+export const refuse = (payload) => ({
+  type: types.REFUSE,
+  payload: payload
 })
 export const updateContent = (payload) => {
   return {

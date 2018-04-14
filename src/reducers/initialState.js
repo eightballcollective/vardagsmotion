@@ -5,6 +5,7 @@ export default {
   },
   content: {
     isPopulated: false,
-    content: {}
-  }
+    content: {},
+    answers: []
+  },
 }

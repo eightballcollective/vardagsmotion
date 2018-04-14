@@ -10,13 +10,13 @@ import {
 function contentReducer(state = initialState.content, { type, payload }) {
   switch(type) {
   case AGREE: {
-    return handleAgree(state)
+    return handleAnswer(state, payload)
   }
   case DISAGREE: {
-    return handleDisagree(state)
+    return handleAnswer(state, payload)
   }
   case REFUSE: {
-    return handleRefuse(state)
+    return handleAnswer(state, payload)
   }
   case UPDATE_CONTENT: {
     return handleUpdateContent(state, payload)
@@ -30,18 +30,21 @@ function contentReducer(state = initialState.content, { type, payload }) {
   }
 }
 
-const handleAgree = (state) => {
-  console.log(state)
-  return state
+const handleAnswer = (state, payload) => {
+  let currentId = state.content.id
+  return {
+    ...state,
+    answers: [
+      // Remove any old answers for the id
+      ...state.answers.filter(answer => answer.id != currentId),
+      // Add new answer
+      {
+        id: currentId,
+        answer: payload,
+      }
+    ]
+  }
 }
-
-const handleDisagree = (state) => ({
-  ...state,
-})
-
-const handleRefuse = (state) => ({
-  ...state,
-})
 
 const handleFetchData = (state, payload) => {
   return state

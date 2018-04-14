@@ -7,16 +7,15 @@ import { agree, disagree, refuse } from '../../actions/contentActions'
 class DecisionPanel extends React.Component {
   constructor (props) {
     super(props)
-
   }
 
   render () {
-    let { agreeAction, disagreeAction, refuseAction } = this.props
+    let { agreeAction, disagreeAction, refuseAction, id } = this.props
     return (
       <div className='decisionPanel'>
-        <Button title='Ja' className='yes' onClick={() => agreeAction()}/>
-        <Button title='Nej' className='no' onClick={() => disagreeAction()}/>
-        <Button title='Avstå' className='refuse' onClick={() => refuseAction()}/>
+        <Button title='Ja' className='yes' onClick={() => agreeAction('Ja')}/>
+        <Button title='Nej' className='no' onClick={() => disagreeAction('Nej')}/>
+        <Button title='Avstå' className='refuse' onClick={() => refuseAction('Avstår')}/>
       </div>
     )
   }
@@ -28,9 +27,9 @@ function mapStateToProps(state, props) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    agreeAction: () => dispatch(agree()),
-    disagreeAction: () => dispatch(disagree()),
-    refuseAction: () => dispatch(refuse()),
+    agreeAction: (payload) => dispatch(agree(payload)),
+    disagreeAction: (payload) => dispatch(disagree(payload)),
+    refuseAction: (payload) => dispatch(refuse(payload)),
   }
 }
 
