@@ -1,6 +1,6 @@
 {
   "name": "Vardagsmotion",
-  "version": "1.0",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@nivo/pie": "^0.33.0",
@@ -13,6 +13,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "deploy": "git push heroku master",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
