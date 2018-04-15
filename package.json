@@ -1,6 +1,6 @@
 {
-  "name": "hack4sweden",
-  "version": "0.1.0",
+  "name": "Vardagsmotion",
+  "version": "1.0",
   "private": true,
   "dependencies": {
     "@nivo/pie": "^0.33.0",
