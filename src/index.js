@@ -8,7 +8,9 @@ import store from './store'
 import api from './api'
 import { fetchDecisions } from './actions/sidebarActions'
 
-api.getDecisions().then(data => store.dispatch(fetchDecisions(data)))
+api.getDecisions().then(data => {
+  store.dispatch(fetchDecisions(data[0]))
+})
 
 ReactDOM.render(
   <Provider store={store}>
