@@ -26,12 +26,13 @@ class Content extends React.Component {
   }
 
   render () {
-    let {title, subtitle, date, href} = this.props.content
+    let {title, subtitle, date, href, tags} = this.props.content
     let summary = this.props.summary
     return (
       this.props.isPopulated ? (<div className='content'>
         <div>
           <h1>{title}</h1>
+          {JSON.parse(tags).join(', ')}
           <h5>{date.substring(0, 10)}</h5>
           <p>{ summary || 'Ingen sammanfattning tillgänglig' }</p>
           <br/>

@@ -24,6 +24,7 @@ class Sidebar extends React.Component {
           date={item.date}
           summary={item.summary}
           href={item.href}
+          tags={item.tags}
           onClick={() => onListItemClick(item)}/>
       )
     })
